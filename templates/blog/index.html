@@ -1,0 +1,121 @@
+{% extends 'blog/base.html' %}
+
+{% load staticfiles %}
+
+{% block main %}
+
+<!--	<article class="post">
+			{% if user.is_authenticated %}
+				<h2>Bienvenid@ {{ user.username }}!</h2>
+				<h3 id="userEmail">{{ user.email }}</h3>
+			{% else %}
+				<!-- <p>Tienes cuenta de usuario? <a href="{% url 'login' %}">login</a></p>
+			{% endif %}
+	</article> -->
+
+	<!-- Post -->
+	{% for p in post_list %}
+		<article class="post">
+			<header>
+				<div class="title">
+					<h2><a href="/{{ p.get_url }}">{{ p.title }}</a></h2>
+					<p>{{ p.subtitle }}</p>
+				</div>
+				<div class="meta">
+					<time class="published" datetime="{{ p.date }}">{{ p.date }}</time>
+					<a href="/" class="author"><span class="name">Ana Ruiz</span><img src="{% static 'blog/images/avatar.jpg' %}" alt="" /></a>
+				</div>
+			</header>
+			<a href="/{{ p.get_url }}" class="image featured"><img src="{{ p.main_pic.url }}" alt="" /></a>
+
+			{% autoescape off %}
+				{{ p.intro }}
+			{% endautoescape %}
+
+			<footer>
+				<ul class="actions">
+					<li><a href="/blog/{{ p.get_url }}" class="button large">Continuar leyendo</a></li>
+				</ul>
+				<ul class="stats">
+					<li><a href="#">General</a></li>
+					<li><a href="#" class="icon fa-heart">28</a></li>
+					<li><a href="#" class="icon fa-comment">128</a></li>
+				</ul>
+			</footer>
+		</article>
+	{% endfor %}
+
+{% endblock %}
+
+{% block sidebar %}
+	<!-- Sidebar -->
+		<section id="sidebar">
+
+			<!-- Intro -->
+				<section id="intro">
+					<a href="#" class="logo"><img src="{% static 'blog/images/logo.jpg' %}" alt="" /></a>
+					<header>
+						<h2>Blog</h2>
+						<p>Porque un poco de información viene bien de vez en cuando.</p>
+					</header>
+				</section>
+
+			<!-- Mini Posts -->
+				<section>
+					<div class="mini-posts">
+
+						<!-- Mini Post -->
+						{% for p in random_mini_list %}
+							<article class="mini-post">
+								<header>
+									<h3><a href="/blog/{{ p.get_url }}">{{ p.title }}</a></h3>
+									<time class="published" datetime="{{ p.date }}">{{ p.date }}</time>
+									<a href="https://anaruizromero.es" class="author"><img src="{% static 'blog/images/avatar.jpg' %}" alt="" /></a>
+								</header>
+								<a href="/blog/{{ p.get_url }}" class="image"><img src="{{ p.main_pic.url }}" alt="" /></a>
+							</article>
+						{% endfor %}
+
+					</div>
+				</section>
+
+			<!-- Posts List -->
+				<section>
+					<ul class="posts">
+						{% for p in random_list %}
+							<li>
+								<article>
+									<header>
+										<h3><a href="/{{ p.get_url }}">{{ p.title }}</a></h3>
+										<time class="published" datetime="{{ p.date }}">{{ p.date }}</time>
+									</header>
+									<a href="/blog/{{ p.get_url }}" class="image"><img src="{{ p.main_pic.url }}" alt="" /></a>
+								</article>
+							</li>
+						{% endfor %}
+					</ul>
+				</section>
+
+			<!-- About -->
+			<!--	<section class="blurb">
+					<h2>About</h2>
+					<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
+					<ul class="actions">
+						<li><a href="#" class="button">Learn More</a></li>
+					</ul>
+				</section> -->
+
+			<!-- Footer -->
+				<section id="footer">
+					<ul class="icons">
+						<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
+						<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+				</section>
+
+		</section>
+{% endblock %}

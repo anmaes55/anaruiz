@@ -1,0 +1,3 @@
+banner: 2160 x 472
+pic01: 688 x 397
+avatar: 279 x 279

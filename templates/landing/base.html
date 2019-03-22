@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Psicólogo en Málaga</title>
+		{% load static %}
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'landing/assets/css/main.css' %}" />
+        <!-- Formulario Contacto https://www.youtube.com/watch?v=ohTf29OIrtU de aquí lo saqué -->
+       <!-- webform.pw
+
+<script> web_form_id = "fbc14444-1347-42c9-a9f4-2824e1372e5e" </script>
+<script type="text/javascript"
+    src="https://webform.pw/client/formclient.nocache.js">
+</script>
+-->
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<span class="image avatar"><img src="{% static 'landing/images/Avatar3.jpg' %}" alt="" /></span>
+					<h1 id="logo"><a href="/#">Ana Ruiz</a></h1>
+					<p>Gabinete de Psicología <br />
+					Para pedir consulta:  <b>626 28 93 06</b></p>
+				</header>
+				<nav id="nav">
+					<ul>
+						<li><a href="/#one" class="active">Introducción</a></li>
+						<li><a href="/#two">Áreas profesionales</a></li>
+						<li><a href="/#three">Causas a considerar</a></li>
+						<li><a href="/blog">Blog</a></li>
+						<li><a href="/#four">Contactar</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+						<li><a href="/#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="/#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="/#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="/#" class="icon fa-github"><span class="label">Github</span></a></li>
+						<li><a href="/#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				{% block main %}
+				{% endblock %}
+
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'landing/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'landing/assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'landing/assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'landing/assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'landing/assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'landing/assets/js/util.js' %}"></script>
+			<script src="{% static 'landing/assets/js/main.js' %}"></script>
+
+	</body>
+</html>

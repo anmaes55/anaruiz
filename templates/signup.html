@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block main %}
+	<!-- Post -->
+		<article class="post">
+			<header>
+				<div class="title">
+					<h2>Sign up</h2>
+				</div>
+			</header>
+		    <form method="post">
+		        {% csrf_token %}
+		        {{ form.as_p }}
+		        <button type="submit">Sign up</button>
+		    </form>
+		</article>
+{% endblock %}

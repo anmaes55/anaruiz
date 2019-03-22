@@ -1,0 +1,37 @@
+{% extends 'blog/base.html' %}
+
+{% load staticfiles %}
+
+{% block main %}
+
+	<!-- Post -->
+		<article class="post">
+			<header>
+				<div class="title">
+					<h2><a href="/blog">{{ post.title }}</a></h2>
+					<p>{{ post.subtitle }}</p>
+				</div>
+				<div class="meta">
+					<time class="published" datetime="{{ post.date }}">{{ post.date }}</time>
+					<a href="https://anaruiz.es" class="author">
+						<span class="name">AR</span>
+						<img src="{% static 'blog/images/avatar.jpg' %}" alt="" />
+					</a>
+				</div>
+			</header>
+			<span class="image featured"><img src="{{ post.main_pic.url }}" alt="" /></span>
+
+			{% autoescape off %}
+				{{ post.body }}
+			{% endautoescape %}
+
+			<footer>
+				<ul class="stats">
+					<li><a href="/blog">ANA RUIZ- BLOG</a></li>
+					<li><a href="#" class="icon fa-heart">28</a></li>
+					<li><a href="#" class="icon fa-comment">128</a></li>
+				</ul>
+			</footer>
+		</article>
+
+{% endblock %}

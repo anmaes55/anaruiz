@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+
+{% block main %}
+		<article class="post">
+			<header>
+				<div class="title">
+					<h2>Cargador de imagenes</h2>
+				</div>
+				<div class="meta">
+					{% if user.is_authenticated %}
+						<h5 id="userEmail">{{ user.email }}</h5>
+					{% else %}
+						<h5>Tienes cuenta de usuario? <a href="{% url 'login' %}">login</a></h5>
+					{% endif %}
+				</div>
+			</header>
+			<form method="post" action="{% url 'member' %}" enctype="multipart/form-data">
+				{% csrf_token %}
+				<p>{{ form.non_field_errors }}</p>
+				<p>{{ form.imgFile.label_tag }} {{ form.imgFile.help_text }}</p>
+				<p>
+					{{ form.imgFile.errors }}
+					{{ form.imgFile }}
+				</p>
+				<button type="submit">Upload</button>
+			</form>
+			{% if images %}
+				{% for i in images %}
+					<a href="/single" class="image featured"><img src="{{ i.imgFile.url }}" alt="" /></a>
+				{% endfor %}
+			{% else %}
+				<p>No hay ninguna imagen cargada</p>
+			{% endif %}
+
+		</article>
+{% endblock %}
