@@ -18,7 +18,7 @@ def index(request):
             from_email = form.cleaned_data['from_email']
             mensaje = form.cleaned_data['mensaje']
             try:
-                send_mail(subject, mensaje, from_email, ['juan@quitiweb.com'])
+                send_mail(subject, mensaje, from_email, ['juan@quitiweb.com', 'anamail12@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found')
 
