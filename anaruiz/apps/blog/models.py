@@ -5,7 +5,7 @@ from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 
 TITLE = 100
-TEXT = 15000
+TEXT = 150000
 
 
 class Post(models.Model):

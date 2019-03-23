@@ -103,5 +103,9 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# pyCharm stuff
+# media_files
+public/
+media/
+
+# pycharm stuff
 .idea/
