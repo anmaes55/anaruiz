@@ -21,7 +21,7 @@ SECRET_KEY = '++zp1aynsy_e@1sr)7n%or0%8e77^byh(7p8864739&xl(vgvc'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '.anaruiz.club',
+    '.anaruizromero.es',
     '127.0.0.1',
     'localhost',
 ]
