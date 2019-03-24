@@ -14,11 +14,12 @@ def index(request):
     else:
         form = ContactForm(request.POST)
         if form.is_valid():
+            nombre = form.cleaned_data['nombre']
             subject = form.cleaned_data['asunto']
             from_email = form.cleaned_data['from_email']
-            mensaje = form.cleaned_data['mensaje']
+            mensaje = 'Mensaje de: ' + nombre + '\nEmail: ' + from_email + '\n\n' + form.cleaned_data['mensaje']
             try:
-                send_mail(subject, mensaje, from_email, ['juan@quitiweb.com', 'anamail12@gmail.com'])
+                send_mail(subject, mensaje, 'contacto@anaruizromero.es', ['juan@quitiweb.com', 'anamail12@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found')
 
