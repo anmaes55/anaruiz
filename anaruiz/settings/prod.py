@@ -14,6 +14,7 @@ MEDIA_ROOT = os.path.join(PUBLIC_ROOT, 'media')
 
 # To send emails using SMTP
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+ADMINS = (('Juan Ruiz', 'juan@quitiweb.com'),)
 EMAIL_HOST = 'smtp.dreamhost.com'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'juan@quitiweb.com'
