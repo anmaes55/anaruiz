@@ -19,7 +19,7 @@ def index(request):
             from_email = form.cleaned_data['from_email']
             mensaje = 'Mensaje de: ' + nombre + '\nEmail: ' + from_email + '\n\n' + form.cleaned_data['mensaje']
             try:
-                send_mail(subject, mensaje, 'contacto@anaruizromero.es', ['juan@quitiweb.com', 'anamail12@gmail.com'])
+                send_mail(subject, mensaje, 'info@anaruizromero.es', ['juan@quitiweb.com', 'anamail12@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found')
 
@@ -37,3 +37,7 @@ def index(request):
 
 def mensaje_enviado(request):
     return render(request, 'landing/mensaje-enviado.html')
+
+
+def cookies(request):
+    return render(request, 'landing/cookies.html')
