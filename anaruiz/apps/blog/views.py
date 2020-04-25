@@ -5,9 +5,8 @@ from django.urls import reverse
 from django.utils import timezone
 from django.views.generic import DetailView
 
-from . import models
-from . import forms
-from .tasks import simulate_send_emails
+from anaruiz.apps.blog import models
+from anaruiz.apps.blog import forms
 
 
 class Single(DetailView):
@@ -48,8 +47,3 @@ def member(request):
     images = models.Imagen.objects.all()
 
     return render(request, 'blog/member.html', {'images': images, 'form': form})
-
-
-def send_emails(request):
-    simulate_send_emails.delay(10)  # @UndefinedVariable
-    return HttpResponse('Emails sent using Celery')

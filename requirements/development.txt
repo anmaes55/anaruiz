@@ -1,2 +1,0 @@
--r testing.txt
-django-debug-toolbar
